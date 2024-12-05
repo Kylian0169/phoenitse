@@ -13,8 +13,34 @@
         header {
             background-color: #e68e00;
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
+            position: relative;
+        }
+        header .btn-3d {
+            display: inline-block;
+            margin: 10px 10px;
+            padding: 10px 20px;
+            color: white;
+            background: linear-gradient(145deg, #b55100, #ff0000);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3), 
+                        -2px -2px 4px rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out;
+        }
+        header .btn-3d:hover {
+            transform: translateY(-3px);
+            box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.4), 
+                        -3px -3px 6px rgba(255, 255, 255, 0.2);
+        }
+        header .btn-3d:active {
+            transform: translateY(2px);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 
+                        -1px -1px 2px rgba(255, 255, 255, 0.1);
         }
         nav {
             background-color: #b50000;
@@ -46,19 +72,14 @@
 </head>
 <body>
     <header>
-        <h1>Les PheoniTSE</h1>
+        <h1>Bienvenue sur le site des PheoniTSE</h1>
+        <a href="#accueil" class="btn-3d">Accueil</a>
+        <a href="#services" class="btn-3d">Services</a>
+        <a href="#contact" class="btn-3d">Contact</a>
+        <a href="#a-propos" class="btn-3d">À propos</a>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#a-propos">À propos</a></li>
-        </ul>
-    </nav>
     <main>
         <h2>Bienvenue !</h2>
-        <p>Ce site est un debut du site PheoniTSE</p>
     </main>
 </body>
 </html>
