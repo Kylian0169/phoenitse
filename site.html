@@ -9,49 +9,197 @@
 <body>
   <!-- Header Section -->
   <header class="header">
-      <img src="logo.png" alt="Logo" class="logo">
-      <h1 class="site-title">Phoeni'TSE</h1>
-      <nav class="tabs">
-          <button onclick="showTab(0)">Actu</button>
-          <button onclick="showTab(1)">Menu</button>
-          <button onclick="showTab(2)">Equip</button>
-          <button onclick="showTab(3)">Reseaux</button>
-      </nav>
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1 class="site-title">Phoeni'TSE</h1>
+    <nav class="tabs">
+      <button onclick="showTab('actu')">Actu</button>
+      <button onclick="showTab('menu')">Menu</button>
+      <button onclick="showTab('equip')">Equip</button>
+      <button onclick="showTab('reseaux')">Reseaux</button>
+    </nav>
   </header>
   
-  <div class="parallax"></div>
-
-  <!-- Main Menu -->
-  <div class="main-menu">
-    <!-- Sliding Banner System -->
-    <div class="slider-wrapper">
-      <button class="slider-button left" onclick="slide(-1)">&#8249;</button>
-      <div class="slider-container">
-        <div class="slider">
-          <div class="banner">Jour 1</div>
-          <div class="banner">Jour 2</div>
-          <div class="banner">Jour 3</div>
-          <div class="banner">Jour 4</div>
-          <div class="banner">Jour 5</div>
-        </div>
-      </div>
-      <button class="slider-button right" onclick="slide(1)">&#8250;</button>
-    </div>
-
-    <!-- Large Banners with Descriptions -->
-    <div class="large-banners">
-      <div class="banner-item">Pole 1 Description</div>
-      <div class="banner-item">Pole 2 Description</div>
-      <div class="banner-item">Pole 3 Description</div>
-    </div>
-  </div>
+  
 
   <!-- Tab Panels -->
   <div class="tab-panels">
-    <div class="tab active" id="actu">Actu Content</div>
-    <div class="tab" id="menu">Menu Content</div>
-    <div class="tab" id="equip">Equip Content</div>
-    <div class="tab" id="reseaux">Reseaux Content</div>
+    <div class="tab active" id="actu">
+      <div class="parallax"></div>
+
+      <!-- Main Menu -->
+      <div class="main-menu">
+        <!-- Sliding Banner System -->
+        <div class="slider-wrapper">
+          <button class="slider-button left" onclick="slide(-1)">&#8249;</button>
+          <div class="slider-container">
+            <div class="slider">
+              <div class="banner">Jour 1</div>
+              <div class="banner">Jour 2</div>
+              <div class="banner">Jour 3</div>
+              <div class="banner">Jour 4</div>
+              <div class="banner">Jour 5</div>
+            </div>
+          </div>
+          <button class="slider-button right" onclick="slide(1)">&#8250;</button>
+        </div>
+        
+            <!-- Space Buttons Section -->
+        <div class="space-buttons">
+          <button class="space-button"><span>Nos menus</span></button>
+          <button class="space-button"><span>Uber EATSE</span></button>
+          <button class="space-button"><span>Nos cocktails</span></button>
+          <button class="space-button"><span>Nos gourmandises</span></button>
+        </div>
+    
+    
+        <!-- Large Banners with Descriptions -->
+        <div class="large-banners">
+          <div class="banner-item">
+            <div class="banner-title">Pole cuisine</div>
+            <img src="5-Ways-Healthy-Cooking-Classes-Can-Help-With-Your-Diet.jpg" alt="Pole 1" class="banner-image">
+          </div>
+          <div class="banner-item">
+            <div class="banner-title">Pole lecture pour enfants</div>
+            <img src="4052.jpg" alt="Pole 2" class="banner-image">
+          </div>
+          <div class="banner-item">
+            <div class="banner-title">Pole soirées</div>
+            <img src="shutterstock_1527035324.jpg" alt="Pole 3" class="banner-image">
+        </div>
+      </div>
+    </div>
+    
+        <div class="weekly-program">
+          <h2>Programme de la Semaine</h2>
+          <ul>
+            <li>
+              <strong>Lundi :</strong> Réunion d'équipe à 10h, Atelier de développement à 14h.
+            </li>
+            <li>
+              <strong>Mardi :</strong> Conférence "Innovation technologique" à 9h, Séance de brainstorming à 15h.
+            </li>
+            <li>
+              <strong>Mercredi :</strong> Réunion de suivi de projet à 11h, Test des nouvelles fonctionnalités à 16h.
+            </li>
+            <li>
+              <strong>Jeudi :</strong> Atelier de formation à 9h, Révision des objectifs à 13h.
+            </li>
+            <li>
+              <strong>Vendredi :</strong> Démonstration du projet à 10h, Clôture de la semaine à 17h.
+            </li>
+          </ul>
+        </div>
+      </div>
+    <div class="tab" id="menu">
+      <h2>Menu de la Semaine</h2>
+      <ul>
+        <li><strong>Lundi :</strong> Salade César, Poulet rôti, Tarte aux pommes</li>
+        <li><strong>Mardi :</strong> Soupe de légumes, Filet de poisson, Crème brûlée</li>
+        <li><strong>Mercredi :</strong> Quiche Lorraine, Poulet aux légumes, Mousse au chocolat</li>
+        <li><strong>Jeudi :</strong> Pâtes Bolognese, Gratin dauphinois, Tiramisu</li>
+        <li><strong>Vendredi :</strong> Sushi, Tempura de crevettes, Gâteau au matcha</li>
+      </ul>
+    </div>
+
+    <div class="tab" id="equip">
+      <h2>Notre Équipe et Nos Équipements</h2>
+  
+  <!-- Section Équipe -->
+  <div class="team-section">
+    <h3>Rencontrez notre équipe</h3>
+    <div class="team-members">
+      <!-- Membre 1 -->
+      <div class="team-member">
+        <img src="team_member1.jpg" alt="Membre 1" class="team-photo">
+        <h4>Maxime Pigeau</h4>
+        <p>Président de la République</p>
+        <p>Maxime supervise le développement des projets et assure la coordination entre les différents pôles techniques.</p>
+      </div>
+      <!-- Membre 2 -->
+      <div class="team-member">
+        <img src="team_member2.jpg" alt="Membre 2" class="team-photo">
+        <h4>Romane</h4>
+        <p>Designer en chef</p>
+        <p>Romane est responsable de la conception visuelle et de l'expérience utilisateur des projets.</p>
+      </div>
+      <!-- Membre 3 -->
+      <div class="team-member">
+        <img src="team_member3.jpg" alt="Membre 3" class="team-photo">
+        <h4>Anae</h4>
+        <p>Développeur Front-End</p>
+        <p>Paul est spécialisé dans le développement front-end et s'assure que l'interface est fonctionnelle et responsive.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Équipements -->
+  <div class="equipment-section">
+    <h3>Nos équipements</h3>
+    <div class="equipment-list">
+      <!-- Équipement 1 -->
+      <div class="equipment-item">
+        <img src="equipment1.jpg" alt="Équipement 1" class="equipment-photo">
+        <h4>Serveur dédié</h4>
+        <p>Un serveur haute performance utilisé pour héberger nos applications et assurer une disponibilité continue.</p>
+      </div>
+      <!-- Équipement 2 -->
+      <div class="equipment-item">
+        <img src="equipment2.jpg" alt="Équipement 2" class="equipment-photo">
+        <h4>Ordinateurs portables</h4>
+        <p>Des ordinateurs portables performants pour tous les membres de l'équipe, permettant un travail efficace sur le terrain.</p>
+      </div>
+      <!-- Équipement 3 -->
+      <div class="equipment-item">
+        <img src="equipment3.jpg" alt="Équipement 3" class="equipment-photo">
+        <h4>Tablettes graphiques</h4>
+        <p>Des tablettes graphiques utilisées par nos designers pour la création d'illustrations et de maquettes interactives.</p>
+      </div>
+    </div>
+  </div>
+    </div>
+    <div class="tab" id="reseaux">
+      <h2>Nos Réseaux Sociaux</h2>
+      
+      <!-- Section Réseaux Sociaux -->
+      <div class="social-media-section">
+        <h3>Suivez-nous sur les réseaux sociaux</h3>
+        <div class="social-media-links">
+          <!-- Facebook -->
+          <div class="social-media-item">
+            <a href="https://www.facebook.com" target="_blank">
+              <img src="facebook-icon.png" alt="Facebook" class="social-icon">
+              <h4>Facebook</h4>
+              <p>Rejoignez notre communauté et suivez toutes nos actualités.</p>
+            </a>
+          </div>
+          <!-- Instagram -->
+          <div class="social-media-item">
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="instagram-icon.png" alt="Instagram" class="social-icon">
+              <h4>Instagram</h4>
+              <p>Découvrez nos photos et vidéos des événements récents.</p>
+            </a>
+          </div>
+          <!-- Twitter -->
+          <div class="social-media-item">
+            <a href="https://twitter.com" target="_blank">
+              <img src="twitter-icon.png" alt="Twitter" class="social-icon">
+              <h4>Twitter</h4>
+              <p>Suivez nos tweets pour les dernières mises à jour et annonces.</p>
+            </a>
+          </div>
+          <!-- LinkedIn -->
+          <div class="social-media-item">
+            <a href="https://www.linkedin.com" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="social-icon">
+              <h4>LinkedIn</h4>
+              <p>Connectez-vous avec nous pour des opportunités professionnelles et des collaborations.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="site.js"></script>

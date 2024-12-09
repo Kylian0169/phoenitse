@@ -21,3 +21,21 @@ function showTab(index) {
     tab.classList.toggle('active', i === index);
   });
 }
+
+
+function showTab(tabId) {
+  // Cacher tous les onglets
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(tab => {
+    tab.classList.remove('active');
+  });
+  
+  // Afficher l'onglet sélectionné
+  const activeTab = document.getElementById(tabId);
+  activeTab.classList.add('active');
+}
+
+// Afficher l'onglet "actu" par défaut
+document.addEventListener("DOMContentLoaded", () => {
+  showTab('actu');
+});
