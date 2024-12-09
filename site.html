@@ -1,102 +1,59 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Web</title>
-    <style>
-    .parallax {
-        /* The image used */
-        background-image: url("https://www.ecosia.org/images?q=image%20rdm&addon=opensearch&addonversion=6.0.4#id=8EB4229B9526FEC5A2393BB1187CC789DDED17EA");
-        
-        /* Set a specific height */
-        min-height: 500px; 
-        
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #e68e00;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
-        header .btn-3d {
-            display: inline-block;
-            margin: 10px 10px;
-            padding: 10px 20px;
-            color: white;
-            background: linear-gradient(145deg, #b55100, #ff0000);
-            border: none;
-            border-radius: 5px;
-            box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3), 
-                        -2px -2px 4px rgba(255, 255, 255, 0.1);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            transition: all 0.2s ease-in-out;
-        }
-        header .btn-3d:hover {
-            transform: translateY(-3px);
-            box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.4), 
-                        -3px -3px 6px rgba(255, 255, 255, 0.2);
-        }
-        header .btn-3d:active {
-            transform: translateY(2px);
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 
-                        -1px -1px 2px rgba(255, 255, 255, 0.1);
-        }
-        nav {
-            background-color: #b50000;
-            overflow: hidden;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            padding: 14px 20px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-
-        <div class="parallax"></div>
-
-        <div style="height:1000px;background-color:red;font-size:36px">
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phoeni'TSE</title>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-    <header>
-        <h1>Bienvenue sur le site des PheoniTSE</h1>
-        <a href="#accueil" class="btn-3d">Accueil</a>
-        <a href="#services" class="btn-3d">Services</a>
-        <a href="#contact" class="btn-3d">Contact</a>
-        <a href="#a-propos" class="btn-3d">À propos</a>
-    </header>
-    <main>
-        <h2>Bienvenue !</h2>
-    </main>
+  <!-- Header Section -->
+  <header class="header">
+      <img src="logo.png" alt="Logo" class="logo">
+      <h1 class="site-title">Phoeni'TSE</h1>
+      <nav class="tabs">
+          <button onclick="showTab(0)">Actu</button>
+          <button onclick="showTab(1)">Menu</button>
+          <button onclick="showTab(2)">Equip</button>
+          <button onclick="showTab(3)">Reseaux</button>
+      </nav>
+  </header>
+  
+  <div class="parallax"></div>
+
+  <!-- Main Menu -->
+  <div class="main-menu">
+    <!-- Sliding Banner System -->
+    <div class="slider-wrapper">
+      <button class="slider-button left" onclick="slide(-1)">&#8249;</button>
+      <div class="slider-container">
+        <div class="slider">
+          <div class="banner">Jour 1</div>
+          <div class="banner">Jour 2</div>
+          <div class="banner">Jour 3</div>
+          <div class="banner">Jour 4</div>
+          <div class="banner">Jour 5</div>
+        </div>
+      </div>
+      <button class="slider-button right" onclick="slide(1)">&#8250;</button>
+    </div>
+
+    <!-- Large Banners with Descriptions -->
+    <div class="large-banners">
+      <div class="banner-item">Pole 1 Description</div>
+      <div class="banner-item">Pole 2 Description</div>
+      <div class="banner-item">Pole 3 Description</div>
+    </div>
+  </div>
+
+  <!-- Tab Panels -->
+  <div class="tab-panels">
+    <div class="tab active" id="actu">Actu Content</div>
+    <div class="tab" id="menu">Menu Content</div>
+    <div class="tab" id="equip">Equip Content</div>
+    <div class="tab" id="reseaux">Reseaux Content</div>
+  </div>
+
+  <script src="site.js"></script>
 </body>
 </html>

@@ -1,1 +1,160 @@
 
+/* Reset and Background */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('large-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed; /* Fixe l'en-tête en haut */
+  width: 100%; /* Assure que l'en-tête prend toute la largeur de la page */
+  top: 0; /* Positionne l'en-tête en haut de la page */
+  z-index: 1000; /* Assure que l'en-tête reste au-dessus des autres contenus */
+}
+
+
+.logo {
+  height: 50px;
+}
+
+.parallax {
+    /* L'image utilisée */
+    background-image: url('Rickrolling-Transparent-PNG.png');
+    /* Définir une hauteur spécifique */
+    min-height: 500px;
+    /* Créer l'effet de scrolling parallaxe */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.site-title {
+  font-size: 24px;
+  color: white;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tabs button {
+  padding: 10px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tabs button:hover {
+  background: #45a049;
+}
+
+/* Sliding Banner */
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  position: relative;
+  overflow: visible;
+}
+
+.slider-container {
+  width: 100%;
+  overflow: visible;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 10px; /* Space between banners */
+}
+
+.banner {
+  flex: 0 0 calc(33.33% - 10px); /* Show 3 banners with spacing */
+  height: 600px; /* Adjust vertical length */
+  background: rgba(0, 0, 255, 0.2);
+  border-radius: 8px;
+  color: blue;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Nécessaire pour z-index */
+  z-index: 0;
+}
+
+.banner:hover {
+  transform: scale(1.05); /* Agrandissement proportionnel */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ombre sous la bannière */
+  z-index: 10;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 20; /* Place les boutons au-dessus des bannières */
+  pointer-events: auto; /* Assure que les clics fonctionnent */
+}
+
+.slider-button.left {
+  left: 10px;
+}
+
+.slider-button.right {
+  right: 10px;
+}
+
+.slider-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Large Banners */
+.large-banners {
+  margin-top: 20px;
+}
+
+.banner-item {
+  padding: 20px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+}
+
+/* Tabs */
+.tab-panels {
+  margin: 20px;
+}
+
+.tab {
+  display: none;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 8px;
+}
+
+.tab.active {
+  display: block;
+}
