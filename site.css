@@ -23,7 +23,8 @@ body, html {
 
 
 .logo {
-  height: 50px;
+  height: 150px;
+  display: flex;
 }
 
 .parallax {
