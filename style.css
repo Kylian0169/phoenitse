@@ -1,53 +1,50 @@
-
-/* Reset and Background */
-body, html {
+/* ----------------------------- */
+/* 1. Réinitialisation et Arrière-plan */
+/* ----------------------------- */
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: url('large-background.jpg') no-repeat center center fixed;
+  background: url('./images/bg/bg_antique.jfif') no-repeat center center fixed;
   background-size: cover;
+  /* L'image couvre tout l'écran */
 }
 
-/* Header */
+/* ----------------------------- */
+/* 2. En-tête et Navigation */
+/* ----------------------------- */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.7);
-  position: fixed; /* Fixe l'en-tête en haut */
-  width: 100%; /* Assure que l'en-tête prend toute la largeur de la page */
-  top: 0; /* Positionne l'en-tête en haut de la page */
-  z-index: 1000; /* Assure que l'en-tête reste au-dessus des autres contenus */
+  background: rgb(183, 120, 11, 0.7);
+  /* Fond sombre avec opacité */
+  position: fixed;
+  /* Fixe l'en-tête en haut */
+  width: 100%;
+  /* Prend toute la largeur */
+  top: 0;
+  z-index: 1000;
+  /* Toujours au-dessus des autres éléments */
 }
-
 
 .logo {
   height: 150px;
   display: flex;
 }
 
-.parallax {
-    /* L'image utilisée */
-    background-image: url('Rickrolling-Transparent-PNG.png');
-    /* Définir une hauteur spécifique */
-    min-height: 500px;
-    /* Créer l'effet de scrolling parallaxe */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
 .site-title {
   font-size: 24px;
   color: white;
 }
 
+/* Navigation (les boutons de l'en-tête) */
 .tabs {
   display: flex;
   gap: 10px;
+  /* Espacement entre les boutons */
 }
 
 .tabs button {
@@ -61,9 +58,26 @@ body, html {
 
 .tabs button:hover {
   background: #45a049;
+  /* Effet au survol */
 }
 
-/* Sliding Banner */
+/* ----------------------------- */
+/* 3. Effet Parallaxe */
+/* ----------------------------- */
+.parallax {
+  background-image: url('Rickrolling-Transparent-PNG.png');
+  min-height: 500px;
+  /* Hauteur définie */
+  background-attachment: fixed;
+  /* Effet de défilement parallaxe */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ----------------------------- */
+/* 4. Section des Bannières Défilantes */
+/* ----------------------------- */
 .slider-wrapper {
   display: flex;
   align-items: center;
@@ -81,30 +95,33 @@ body, html {
 .slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  gap: 10px; /* Space between banners */
+  /* Animation de défilement */
+  gap: 10px;
 }
 
 .banner {
-  flex: 0 0 calc(33.33% - 10px); /* Show 3 banners with spacing */
-  height: 600px; /* Adjust vertical length */
+  flex: 0 0 calc(33.33% - 10px);
+  /* Affiche 3 bannières par vue */
+  height: 600px;
   background: rgba(0, 0, 255, 0.2);
   border-radius: 8px;
   color: blue;
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative; /* Nécessaire pour z-index */
   z-index: 0;
 }
 
 .banner:hover {
-  transform: scale(1.05); /* Agrandissement proportionnel */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ombre sous la bannière */
+  transform: scale(1.05);
+  /* Agrandissement au survol */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
 
+/* Boutons de contrôle pour les bannières */
 .slider-button {
   position: absolute;
   top: 50%;
@@ -114,8 +131,7 @@ body, html {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 20; /* Place les boutons au-dessus des bannières */
-  pointer-events: auto; /* Assure que les clics fonctionnent */
+  z-index: 20;
 }
 
 .slider-button.left {
@@ -130,20 +146,19 @@ body, html {
   background: rgba(0, 0, 0, 0.7);
 }
 
-/* Espace des boutons animés */
+/* ----------------------------- */
+/* 5. Boutons Animés "Espace" */
+/* ----------------------------- */
 .space-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
   margin: 40px 0;
-  position: relative;
-  width: 100%;
-  height: 200px; /* Hauteur pour l'animation */
+  height: 200px;
   overflow: hidden;
 }
 
-/* Style des boutons dans l'espace */
 .space-button {
   background-color: rgba(255, 255, 255, 0.7);
   color: #333;
@@ -153,87 +168,121 @@ body, html {
   border-radius: 50px;
   cursor: pointer;
   font-weight: bold;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   animation: spaceMovement 10s infinite ease-in-out;
-  transform-style: preserve-3d; /* Préserve l'orientation du texte */
+  transform-style: preserve-3d;
 }
 
-/* Effet de hover sur les boutons */
 .space-button:hover {
   transform: scale(1.1);
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
+/* ----------------------------- */
+/* 6. Popup (Superposition) */
+/* ----------------------------- */
+.popup-overlay {
+  display: none;
+  /* Masquée par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  /* Plus haut niveau d'affichage */
+  justify-content: center;
+  align-items: center;
+}
 
+.popup-content {
+  background: white;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.popup-close:hover {
+  color: red;
+}
+
+/* ----------------------------- */
+/* 7. Bannières Statistiques (Large Banners) */
+/* ----------------------------- */
 .large-banners {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Espace entre les éléments */
+  gap: 20px;
 }
 
-/* Chaque bannière avec une image et un titre */
 .banner-item {
   position: relative;
-  width: 300px; /* Largeur de chaque bannière */
-  height: 200px; /* Hauteur des bannières */
-  overflow: hidden; /* Pour éviter que l'image dépasse du cadre */
-  border-radius: 8px; /* Coins arrondis pour l'ensemble de la bannière */
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-/* Titre sur chaque bannière */
 .banner-title {
   position: absolute;
   top: 10px;
   left: 50%;
-  transform: translateX(-50%); /* Centrer le titre */
-  background-color: rgba(255, 255, 255, 0.7); /* Fond transparent avec opacité */
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 8px 20px;
-  border-radius: 12px; /* Bords arrondis du titre */
-  color: #333; /* Couleur du texte */
+  border-radius: 12px;
+  color: #333;
   font-size: 18px;
   font-weight: bold;
-  text-align: center;
-  z-index: 1; /* Assurer que le titre soit au-dessus de l'image */
 }
 
 .banner-image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Afficher l'image en entier sans la découper */
+  object-fit: contain;
 }
 
-/* Section Programme de la Semaine */
+/* ----------------------------- */
+/* 8. Section Programme de la Semaine */
+/* ----------------------------- */
 .weekly-program {
-  margin-top: 40px; /* Espacement au-dessus */
+  margin-top: 40px;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.05); /* Fond léger */
-  border-radius: 10px; /* Coins arrondis */
-  width: 80%; /* Largeur de la section */
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Titre de la section */
 .weekly-program h2 {
   text-align: center;
   font-size: 24px;
   color: #333;
-  margin-bottom: 20px;
 }
 
-/* Liste du programme */
 .weekly-program ul {
-  list-style-type: none; /* Enlever les puces */
+  list-style: none;
   padding: 0;
 }
 
-/* Élément de liste */
 .weekly-program li {
   background-color: #fff;
   border-radius: 8px;
@@ -244,135 +293,22 @@ body, html {
   color: #333;
 }
 
-/* Mise en évidence des jours */
 .weekly-program li strong {
-  color: #007BFF; /* Couleur bleue pour les jours */
+  color: #007BFF;
 }
 
-
-/* Tabs */
+/* ----------------------------- */
+/* 9. Onglets (Tabs) */
+/* ----------------------------- */
 .tab-panels {
   margin: 20px;
   overflow: hidden;
 }
 
-#menu {
-  background-color: #ffcc00; /* Ajoutez une couleur de fond temporaire */
-  color: #000; /* Couleur du texte noire pour voir clairement le texte */
-  padding: 20px;
-  margin-top: 100px;
-}
-
-#equip {
-  padding: 20px;
-  background-color: #f9f9f9;
-  color: #333;
-  margin-top: 100px;
-}
-
-.team-section,
-.equipment-section {
-  margin-bottom: 40px;
-}
-
-.team-members,
-.equipment-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.team-member,
-.equipment-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  width: 30%;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.team-member img,
-.equipment-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.team-member h4,
-.equipment-item h4 {
-  margin-top: 10px;
-  font-size: 1.2em;
-  color: #333;
-}
-
-.team-member p,
-.equipment-item p {
-  color: #777;
-  font-size: 0.9em;
-}
-
-.team-member p {
-  font-style: italic;
-}
-
-#reseaux {
-  padding: 20px;
-  background-color: #f5f5f5;
-  color: #333;
-  margin-top: 100px;
-}
-
-.social-media-section,
-.events-section {
-  margin-bottom: 40px;
-}
-
-.social-media-links {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.social-media-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  width: 23%;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.social-media-item a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.social-icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-.social-media-item h4 {
-  font-size: 1.1em;
-  color: #333;
-}
-
-.social-media-item p {
-  font-size: 0.9em;
-  color: #777;
-}
-
-
 .tab {
   display: none;
   padding: 20px;
   background: rgba(250, 250, 250, 0.8);
-  color: white;
   border-radius: 8px;
 }
 
