@@ -385,6 +385,38 @@ html {
   border-radius: 8px;
 }
 
+.tab h2{
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.tab li{
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
 .tab.active {
   display: block;
+}
+
+/* ----------------------------- */
+/* 10. Bouton "commander"        */
+/* ----------------------------- */
+#order {
+  position: fixed;
+  display: block;
+  right: 10px;
+  bottom: 10px;
+  font-size: 30px;
+  padding: 15px;
+  background-color: rgb(216, 96, 66);
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  z-index: 3000;
 }
