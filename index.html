@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phoeni'TSE</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <!-- Header Section -->
@@ -58,6 +59,17 @@
             <button class="space-button"><span>Nos cocktails</span></button>
             <button class="space-button"><span>Nos gourmandises</span></button>
           </div>
+
+          <!-- Popup Container -->
+          <div id="popup" class="popup-overlay">
+            <div class="popup-content">
+              <span class="popup-close" onclick="closePopup()">&times;</span>
+              <div id="popup-body">
+                <!-- Contenu dynamique -->
+              </div>
+            </div>
+          </div>
+  
 
           <!-- Large Banners with Descriptions -->
           <div class="large-banners">
@@ -268,17 +280,5 @@
                 </p>
               </a>
             </div>
-
-
-    <script src="script.js"></script>
-    <!-- Popup Container -->
-    <div id="popup" class="popup-overlay">
-      <div class="popup-content">
-        <span class="popup-close" onclick="closePopup()">&times;</span>
-        <div id="popup-body">
-          <!-- Contenu dynamique -->
-        </div>
-      </div>
-    </div>
-  </body>
+          </body>
 </html>
