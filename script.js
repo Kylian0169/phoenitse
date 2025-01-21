@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", () => {
       openPopup("<h2>Uber EATSE</h2><p>Commandez à graille :D</p>");
     });
-    document.querySelector('#order').addEventListener('click', function (e) {
-  	window.scrollTo(0, 0); //fonction pou bouton commander à implémenter
+  document.querySelector('#order').addEventListener('click', function (e) {
+      openPopup("<h2>Uber EATSE</h2><p>Commandez à graille :D</p>"); // meme chose mais pour le bouton order
     })
 });
