@@ -232,6 +232,10 @@ html {
   margin: 40px 0;
   height: 200px;
   overflow: hidden;
+  @media (max-width: 767px) {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
 }
 
 .space-button {
@@ -240,6 +244,9 @@ html {
   border: 2px solid #ddd;
   padding: 20px 40px;
   font-size: 16px;
+  @media (max-width: 767px) {
+    padding: 10px 20px;
+}
   border-radius: 50px;
   cursor: pointer;
   font-weight: bold;
