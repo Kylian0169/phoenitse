@@ -38,6 +38,7 @@ html {
 .site-title {
   font-size: 40px;
   color: white;
+  width:60vw;
   user-select: none;
 }
 
@@ -45,6 +46,7 @@ html {
 .tabs {
   display: flex;
   gap: 10px;
+  width : 40vw;
   /* Espacement entre les boutons */
 }
 
