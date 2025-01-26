@@ -6,6 +6,71 @@
     <title>Phoeni'TSE</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <style>
+      /* Styles pour la fenêtre modale */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .modal-content h2 {
+        margin-top: 0;
+      }
+
+      .close-btn {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .close-btn:hover {
+        background-color: #c0392b;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      input, textarea, button {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
   </head>
   <body>
     <!-- Header Section -->
@@ -23,6 +88,32 @@
     <!-- Fixed Button commander -->
     <button id="order">Commander</button>
 
+    <!-- Modal Form -->
+    <div id="orderModal" class="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+        <h2>Passer une commande</h2>
+        <form action="send_to_discord.php" method="POST">
+          <label for="name">Nom complet :</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="Adresse">Adresse:</label>
+          <input type="text" id="adress" name="adress" required />
+
+          <label for="Numero">Numéro de Téléphone:</label>
+          <input type="text" id="numero" name="numero" required />
+
+          <label for="product">Produit ou service :</label>
+          <input type="text" id="product" name="product" required />
+
+          <label for="message">Message ou instructions supplémentaires :</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+
+          <button type="submit">Envoyer la commande</button>
+        </form>
+      </div>
+    </div>
+
     <!-- Tab Panels -->
     <div class="tab-panels">
       <div class="tab active" id="actu">
@@ -30,11 +121,8 @@
 
         <!-- Main Menu -->
         <div class="main-menu">
-          <!-- Sliding Banner System -->
           <div class="slider-wrapper">
-            <button class="slider-button left" onclick="slide(-1)">
-              &#8249;
-            </button>
+            <button class="slider-button left" onclick="slide(-1)">&#8249;</button>
             <div class="slider-container">
               <div class="slider">
                 <div class="banner">Lundi</div>
@@ -45,240 +133,36 @@
                 <div class="banner">Samedi</div>
               </div>
             </div>
-            <button class="slider-button right" onclick="slide(1)">
-              &#8250;
-            </button>
+            <button class="slider-button right" onclick="slide(1)">&#8250;</button>
           </div>
-
-          <!-- Space Buttons Section -->
           <div class="space-buttons">
-            <button class="space-button" onclick="showTab('menu')">
-              <span>Nos menus</span>
-            </button>
-            <button class="space-button"><span>Uber EATSE</span></button>
-            <button class="space-button"><span>Nos cocktails</span></button>
-            <button class="space-button"><span>Nos gourmandises</span></button>
-          </div>
-
-          <!-- Popup Container -->
-          <div id="popup" class="popup-overlay">
-            <div class="popup-content">
-              <span class="popup-close" onclick="closePopup()">&times;</span>
-              <div id="popup-body">
-                <!-- Contenu dynamique -->
-              </div>
-            </div>
-          </div>
-  
-
-          <!-- Large Banners with Descriptions -->
-          <div class="large-banners">
-            <div class="banner-item">
-              <div class="banner-title">Pole cuisine</div>
-              <img
-                src="images/5-Ways-Healthy-Cooking-Classes-Can-Help-With-Your-Diet.jpg"
-                alt="Pole 1"
-                class="banner-image"
-              />
-            </div>
-            <div class="banner-item">
-              <div class="banner-title">Pole lecture pour enfants</div>
-              <img src="images/4052.jpg" alt="Pole 2" class="banner-image" />
-            </div>
-            <div class="banner-item">
-              <div class="banner-title">Pole soirées</div>
-              <img
-                src="images/shutterstock_1527035324.jpg"
-                alt="Pole 3"
-                class="banner-image"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="weekly-program">
-          <h2>Programme de la Semaine</h2>
-          <ul>
-            <li>
-              <strong>Lundi :</strong> Venez participer à notre événement Bingo !
-            </li>
-            <li>
-              <strong>Mardi :</strong> Une soirée exceptionnelle à La Bonne Mine
-            </li>
-            <li>
-              <strong>Mercredi :</strong> Découvrez de nouvelles sensations avec notre restaurant dans le noir
-            </li>
-            <li>
-              <strong>Jeudi :</strong> Soirée cinema ! Venez voir "" pour 1M€ seulement
-            </li>
-            <li>
-              <strong>Vendredi :</strong> Venez nombreux pour la soirée rési + résultats des plus gros lots de la tombola !
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="tab" id="menu">
-        <h2>Menu de la Semaine</h2>
-        <ul>
-          <li>
-            <strong>Lundi :</strong> Salade César, Poulet rôti, Tarte aux pommes
-          </li>
-          <li>
-            <strong>Mardi :</strong> Soupe de légumes, Filet de poisson, Crème
-            brûlée
-          </li>
-          <li>
-            <strong>Mercredi :</strong> Quiche Lorraine, Poulet aux légumes,
-            Mousse au chocolat
-          </li>
-          <li>
-            <strong>Jeudi :</strong> Pâtes Bolognese, Gratin dauphinois,
-            Tiramisu
-          </li>
-          <li>
-            <strong>Vendredi :</strong> Sushi, Tempura de crevettes, Gâteau au
-            matcha
-          </li>
-        </ul>
-        <h2> Nos cocktails</h2>
-        <ul>
-          <li>
-            <strong>La larme de Phoenix :</strong> recette
-          </li>
-          <li>
-            <strong>Le flam's :</strong> recette
-          </li>
-        </ul>
-      </div>
-
-      <div class="tab" id="equip">
-        <h2>Notre Équipe et Nos Équipements</h2>
-
-        <!-- Section Équipe -->
-        <div class="team-section">
-          <h3>Rencontrez notre équipe !</h3>
-          <div class="team-members">
-            <!-- Membre 1 -->
-            <div class="team-member">
-              <img src="team_member1.jpg" alt="Membre 1" class="team-photo" />
-              <h4>Maxime Pigeau</h4>
-              <p>Président de la République</p>
-              <p>
-                Maxime supervise le développement des projets et assure la
-                coordination entre les différents pôles techniques.
-              </p>
-            </div>
-            <!-- Membre 2 -->
-            <div class="team-member">
-              <img src="team_member2.jpg" alt="Membre 2" class="team-photo" />
-              <h4>Romane</h4>
-              <p>Designer en chef</p>
-              <p>
-                Romane est responsable de la conception visuelle et de
-                l'expérience utilisateur des projets.
-              </p>
-            </div>
-            <!-- Membre 3 -->
-            <div class="team-member">
-              <img src="team_member3.jpg" alt="Membre 3" class="team-photo" />
-              <h4>Anae</h4>
-              <p>Développeur Front-End</p>
-              <p>
-                Paul est spécialisé dans le développement front-end et s'assure
-                que l'interface est fonctionnelle et responsive.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section Équipements -->
-        <div class="equipment-section">
-          <h3>Nos équipements</h3>
-          <div class="equipment-list">
-            <!-- Équipement 1 -->
-            <div class="equipment-item">
-              <img
-                src="equipment1.jpg"
-                alt="Équipement 1"
-                class="equipment-photo"
-              />
-              <h4>Serveur dédié</h4>
-              <p>
-                Un serveur haute performance utilisé pour héberger nos
-                applications et assurer une disponibilité continue.
-              </p>
-            </div>
-            <!-- Équipement 2 -->
-            <div class="equipment-item">
-              <img
-                src="equipment2.jpg"
-                alt="Équipement 2"
-                class="equipment-photo"
-              />
-              <h4>Ordinateurs portables</h4>
-              <p>
-                Des ordinateurs portables performants pour tous les membres de
-                l'équipe, permettant un travail efficace sur le terrain.
-              </p>
-            </div>
-            <!-- Équipement 3 -->
-            <div class="equipment-item">
-              <img
-                src="equipment3.jpg"
-                alt="Équipement 3"
-                class="equipment-photo"
-              />
-              <h4>Tablettes graphiques</h4>
-              <p>
-                Des tablettes graphiques utilisées par nos designers pour la
-                création d'illustrations et de maquettes interactives.
-              </p>
-            </div>
+            <button class="space-button" onclick="showTab('menu')">Nos menus</button>
+            <button class="space-button">Uber EATSE</button>
+            <button class="space-button">Nos cocktails</button>
+            <button class="space-button">Nos gourmandises</button>
           </div>
         </div>
       </div>
-      <div class="tab" id="reseaux">
-        <h2>Nos Réseaux Sociaux</h2>
+      <!-- Other tabs... -->
+    </div>
 
-        <!-- Section Réseaux Sociaux -->
-        <div class="social-media-section">
-          <h3>Suivez-nous sur les réseaux sociaux</h3>
-          <div class="social-media-links">
-            <!-- Facebook -->
-            <div class="social-media-item">
-              <a href="https://www.facebook.com" target="_blank">
-                <img
-                  src="facebook-icon.png"
-                  alt="Facebook"
-                  class="social-icon"
-                />
-                <h4>Facebook</h4>
-                <p>
-                  Rejoignez notre communauté et suivez toutes nos actualités.
-                </p>
-              </a>
-            </div>
-            <!-- Instagram -->
-            <div class="social-media-item">
-              <a href="https://www.instagram.com" target="_blank">
-                <img
-                  src="instagram-icon.png"
-                  alt="Instagram"
-                  class="social-icon"
-                />
-                <h4>Instagram</h4>
-                <p>Découvrez nos photos et vidéos des événements récents.</p>
-              </a>
-            </div>
-            <!-- Twitter -->
-            <div class="social-media-item">
-              <a href="https://twitter.com" target="_blank">
-                <img src="twitter-icon.png" alt="Twitter" class="social-icon" />
-                <h4>Twitter</h4>
-                <p>
-                  Suivez nos tweets pour les dernières mises à jour et annonces.
-                </p>
-              </a>
-            </div>
-          </body>
+    <script>
+      const orderButton = document.getElementById('order');
+      const orderModal = document.getElementById('orderModal');
+
+      function closeModal() {
+        orderModal.style.display = 'none';
+      }
+
+      orderButton.addEventListener('click', () => {
+        orderModal.style.display = 'flex';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target === orderModal) {
+          closeModal();
+        }
+      });
+    </script>
+  </body>
 </html>
