@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,10 +13,10 @@
       <img src="images/logo/logo_phoenitse.png" alt="Logo" class="logo" />
       <h1 class="site-title">Phoeni'TSE</h1>
       <nav class="tabs">
-        <button onclick="showTab('actu')">Accueil</button>
-        <button onclick="showTab('menu')">Le menu</button>
-        <button onclick="showTab('equip')">L'équipe</button>
-        <button onclick="showTab('reseaux')">Nos réseaux</button>
+        <a href="">Accueil</a>
+        <a href="menu.html">Le menu</a>
+        <a href="equip.html">L'équipe</a>
+        <a href="reseaux.html">Nos réseaux</a>
       </nav>
     </header>
 
@@ -99,5 +99,63 @@
         }
       });
     </script>
-  </body>
+
+    <!-- Popup Container -->
+    <div id="popup" class="popup-overlay">
+      <div class="popup-content">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <div id="popup-body">
+          <!-- Contenu dynamique -->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Large Banners with Descriptions -->
+    <div class="large-banners">
+      <div class="banner-item">
+        <div class="banner-title">Pole cuisine</div>
+        <img
+          src="images/5-Ways-Healthy-Cooking-Classes-Can-Help-With-Your-Diet.jpg"
+          alt="Pole 1"
+          class="banner-image"
+        />
+      </div>
+      <div class="banner-item">
+        <div class="banner-title">Pole lecture pour enfants</div>
+        <img src="images/4052.jpg" alt="Pole 2" class="banner-image" />
+      </div>
+      <div class="banner-item">
+        <div class="banner-title">Pole soirées</div>
+        <img
+          src="images/shutterstock_1527035324.jpg"
+          alt="Pole 3"
+          class="banner-image"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="weekly-program">
+    <h2>Programme de la Semaine</h2>
+    <ul>
+      <li>
+        <strong>Lundi :</strong> Venez participer à notre événement Bingo !
+      </li>
+      <li>
+        <strong>Mardi :</strong> Une soirée exceptionnelle à La Bonne Mine
+      </li>
+      <li>
+        <strong>Mercredi :</strong> Découvrez de nouvelles sensations avec notre restaurant dans le noir
+      </li>
+      <li>
+        <strong>Jeudi :</strong> Soirée cinema ! Venez voir "" pour 1M€ seulement
+      </li>
+      <li>
+        <strong>Vendredi :</strong> Venez nombreux pour la soirée rési + résultats des plus gros lots de la tombola !
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
 </html>

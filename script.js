@@ -15,30 +15,6 @@ function slide(direction) {
   slider.style.transform = `translateX(${offset}%)`;
 }
 
-function showTab(index) {
-  const tabs = document.querySelectorAll(".tab");
-  tabs.forEach((tab, i) => {
-    tab.classList.toggle("active", i === index);
-  });
-}
-
-function showTab(tabId) {
-  // Cacher tous les onglets
-  const tabs = document.querySelectorAll(".tab");
-  tabs.forEach((tab) => {
-    tab.classList.remove("active");
-  });
-
-  // Afficher l'onglet sélectionné
-  const activeTab = document.getElementById(tabId);
-  activeTab.classList.add("active");
-}
-
-// Afficher l'onglet "actu" par défaut
-document.addEventListener("DOMContentLoaded", () => {
-  showTab("actu");
-});
-
 function openPopup(content) {
   const popup = document.getElementById("popup");
   const popupBody = document.getElementById("popup-body");
@@ -78,7 +54,4 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", () => {
       openPopup("<h2>Uber EATSE</h2><p>Commandez à graille :D</p>");
     });
-  document.querySelector('#order').addEventListener('click', function (e) {
-      openPopup("<h2>Uber EATSE</h2><p>Commandez à graille :D</p>"); // meme chose mais pour le bouton order
-    })
 });

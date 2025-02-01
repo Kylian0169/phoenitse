@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phoeni'TSE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <img src="images/logo/logo_phoenitse.png" alt="Logo" class="logo" />
+      <h1 class="site-title">Phoeni'TSE</h1>
+      <nav class="tabs">
+        <a href="index.html">Accueil</a>
+        <a href="menu.html">Le menu</a>
+        <a href="">L'équipe</a>
+        <a href="reseaux.html">Nos réseaux</a>
+      </nav>
+    </header>
+
+    <div class="tab" id="equip">
+        <h2>Notre Équipe</h2>
+      
+        <!-- Section Équipe -->
+        <div class="team-section">
+          <h3>Rencontrez notre équipe !</h3>
+          <div class="team-members">
+            <!-- Membre 1 -->
+            <div class="team-member">
+              <img src="team_member1.jpg" alt="Membre 1" class="team-photo" />
+              <h4>Maxime Pigeau</h4>
+              <p>Président de la République</p>
+              <p>
+                Maxime supervise le développement des projets et assure la
+                coordination entre les différents pôles techniques.
+              </p>
+            </div>
+            <!-- Membre 2 -->
+            <div class="team-member">
+              <img src="team_member2.jpg" alt="Membre 2" class="team-photo" />
+              <h4>Romane</h4>
+              <p>Designer en chef</p>
+              <p>
+                Romane est responsable de la conception visuelle et de
+                l'expérience utilisateur des projets.
+              </p>
+            </div>
+            <!-- Membre 3 -->
+            <div class="team-member">
+              <img src="team_member3.jpg" alt="Membre 3" class="team-photo" />
+              <h4>Anae</h4>
+              <p>Développeur Front-End</p>
+              <p>
+                Paul est spécialisé dans le développement front-end et s'assure
+                que l'interface est fonctionnelle et responsive.
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Fixed Button commander -->
+    <button id="order">Commander</button>
+
+    <!-- Modal Form -->
+    <div id="orderModal" class="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+        <h2>Passer une commande</h2>
+        <form action="send_to_discord.php" method="POST">
+          <label for="name">Nom complet :</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="Adresse">Adresse:</label>
+          <input type="text" id="adress" name="adress" required />
+
+          <label for="Numero">Numéro de Téléphone:</label>
+          <input type="text" id="numero" name="numero" required />
+
+          <label for="product">Produit ou service :</label>
+          <input type="text" id="product" name="product" required />
+
+          <label for="message">Message ou instructions supplémentaires :</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+
+          <button type="submit">Envoyer la commande</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+        const orderButton = document.getElementById('order');
+        const orderModal = document.getElementById('orderModal');
+  
+        function closeModal() {
+          orderModal.style.display = 'none';
+        }
+  
+        orderButton.addEventListener('click', () => {
+          orderModal.style.display = 'flex';
+        });
+  
+        window.addEventListener('click', (event) => {
+          if (event.target === orderModal) {
+            closeModal();
+          }
+        });
+      </script>
+
+</body>
+</html>
