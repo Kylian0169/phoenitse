@@ -51,11 +51,11 @@ html {
 }
 
 .tabs a {
-  padding: 10px;
+  padding: 20px;
   background: rgb(216, 96, 66);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
 }
@@ -81,7 +81,7 @@ html {
   
   .tabs button {
     padding: 15px; /* Boutons légèrement plus grands */
-    font-size: 16px; /* Texte plus grand */
+    font-size: 20px; /* Texte plus grand */
   }
 }
 
@@ -239,6 +239,10 @@ html {
   }
 }
 
+.space-abutton{
+  text-decoration: none;
+}
+
 .space-button {
   background-color: rgba(255, 255, 255, 0.7);
   color: #333;
@@ -251,7 +255,6 @@ html {
   border-radius: 50px;
   cursor: pointer;
   font-weight: bold;
-  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -424,7 +427,7 @@ html {
   }
   padding: 15px;
   background-color: rgb(216, 96, 66);
-  color: #fff;
+  color: white;
   border: none;
   outline: none;
   border-radius: 20px;

@@ -34,7 +34,7 @@ function closePopup() {
 // Écouteurs pour les boutons "Nos cocktails" et "Nos gourmandises"
 document.addEventListener("DOMContentLoaded", () => {
   document
-    .querySelector(".space-button:nth-child(3)")
+    .querySelector(".space-button:nth-child(2)")
     .addEventListener("click", () => {
       openPopup(
         "<h2>Nos Cocktails</h2><p>Découvrez nos cocktails rafraîchissants et faits maison !</p>",
@@ -42,16 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   document
-    .querySelector(".space-button:nth-child(4)")
+    .querySelector(".space-button:nth-child(3)")
     .addEventListener("click", () => {
       openPopup(
         "<h2>Nos Gourmandises</h2><p>Craquez pour nos desserts savoureux et faits avec amour !</p>",
       );
-    });
-
-  document
-    .querySelector(".space-button:nth-child(2)")
-    .addEventListener("click", () => {
-      openPopup("<h2>Uber EATSE</h2><p>Commandez à graille :D</p>");
     });
 });
