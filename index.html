@@ -6,6 +6,29 @@
     <title>Phoeni'TSE</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+      }
+      .modal-content {
+        background-color: white;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+        max-height: 80vh;
+        overflow-y: auto;
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
     <!-- Header Section -->
@@ -28,7 +51,7 @@
       <div class="modal-content">
         <button class="close-btn" onclick="closeModal()">&times;</button>
         <h2>Passer une commande</h2>
-        <form action="send_to_discord.php" method="POST">
+        <form id="orderForm" action="send_to_discord.php" method="POST">
           <label for="name">Nom complet :</label>
           <input type="text" id="name" name="name" required />
 
@@ -43,6 +66,9 @@
 
           <label for="message">Message ou instructions supplémentaires :</label>
           <textarea id="message" name="message" rows="5"></textarea>
+
+          <p id="captcha-question"></p>
+          <input type="number" id="captcha-answer" required />
 
           <button type="submit">Envoyer la commande</button>
         </form>
@@ -77,19 +103,21 @@
           </div>
         </div>
       </div>
-      <!-- Other tabs... -->
-    </div>
 
     <script>
       const orderButton = document.getElementById('order');
       const orderModal = document.getElementById('orderModal');
+      const orderForm = document.getElementById('orderForm');
+      const captchaQuestion = document.getElementById('captcha-question');
+      const captchaAnswer = document.getElementById('captcha-answer');
 
       function closeModal() {
         orderModal.style.display = 'none';
       }
 
       orderButton.addEventListener('click', () => {
-        orderModal.style.display = 'flex';
+        orderModal.style.display = 'block';
+        generateCaptcha();
       });
 
       window.addEventListener('click', (event) => {
@@ -97,64 +125,78 @@
           closeModal();
         }
       });
+
+      function generateCaptcha() {
+        let num1 = Math.floor(Math.random() * 10) + 1;
+        let num2 = Math.floor(Math.random() * 10) + 1;
+        captchaQuestion.textContent = `Combien font ${num1} + ${num2} ?`;
+        captchaAnswer.dataset.correct = num1 + num2;
+      }
+
+      orderForm.addEventListener('submit', function(event) {
+        if (parseInt(captchaAnswer.value, 10) !== parseInt(captchaAnswer.dataset.correct, 10)) {
+          alert('CAPTCHA incorrect. Essayez encore.');
+          event.preventDefault();
+          generateCaptcha();
+        }
+      });
     </script>
 
-    <!-- Popup Container -->
-    <div id="popup" class="popup-overlay">
-      <div class="popup-content">
-        <span class="popup-close" onclick="closePopup()">&times;</span>
-        <div id="popup-body">
-          <!-- Contenu dynamique -->
+      <!-- Popup Container -->
+      <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+          <span class="popup-close" onclick="closePopup()">&times;</span>
+          <div id="popup-body">
+            <!-- Contenu dynamique -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Large Banners with Descriptions -->
+      <div class="large-banners">
+        <div class="banner-item">
+          <div class="banner-title">Pole cuisine</div>
+          <img
+            src="images/5-Ways-Healthy-Cooking-Classes-Can-Help-With-Your-Diet.jpg"
+            alt="Pole 1"
+            class="banner-image"
+          />
+        </div>
+        <div class="banner-item">
+          <div class="banner-title">Pole lecture pour enfants</div>
+          <img src="images/4052.jpg" alt="Pole 2" class="banner-image" />
+        </div>
+        <div class="banner-item">
+          <div class="banner-title">Pole soirées</div>
+          <img
+            src="images/shutterstock_1527035324.jpg"
+            alt="Pole 3"
+            class="banner-image"
+          />
         </div>
       </div>
     </div>
 
-
-    <!-- Large Banners with Descriptions -->
-    <div class="large-banners">
-      <div class="banner-item">
-        <div class="banner-title">Pole cuisine</div>
-        <img
-          src="images/5-Ways-Healthy-Cooking-Classes-Can-Help-With-Your-Diet.jpg"
-          alt="Pole 1"
-          class="banner-image"
-        />
-      </div>
-      <div class="banner-item">
-        <div class="banner-title">Pole lecture pour enfants</div>
-        <img src="images/4052.jpg" alt="Pole 2" class="banner-image" />
-      </div>
-      <div class="banner-item">
-        <div class="banner-title">Pole soirées</div>
-        <img
-          src="images/shutterstock_1527035324.jpg"
-          alt="Pole 3"
-          class="banner-image"
-        />
-      </div>
+    <div class="weekly-program">
+      <h2>Programme de la Semaine</h2>
+      <ul>
+        <li>
+          <strong>Lundi :</strong> Venez participer à notre événement Bingo !
+        </li>
+        <li>
+          <strong>Mardi :</strong> Une soirée exceptionnelle à La Bonne Mine
+        </li>
+        <li>
+          <strong>Mercredi :</strong> Découvrez de nouvelles sensations avec notre restaurant dans le noir
+        </li>
+        <li>
+          <strong>Jeudi :</strong> Soirée cinema ! Venez voir "" pour 1M€ seulement
+        </li>
+        <li>
+          <strong>Vendredi :</strong> Venez nombreux pour la soirée rési + résultats des plus gros lots de la tombola !
+        </li>
+      </ul>
     </div>
   </div>
-
-  <div class="weekly-program">
-    <h2>Programme de la Semaine</h2>
-    <ul>
-      <li>
-        <strong>Lundi :</strong> Venez participer à notre événement Bingo !
-      </li>
-      <li>
-        <strong>Mardi :</strong> Une soirée exceptionnelle à La Bonne Mine
-      </li>
-      <li>
-        <strong>Mercredi :</strong> Découvrez de nouvelles sensations avec notre restaurant dans le noir
-      </li>
-      <li>
-        <strong>Jeudi :</strong> Soirée cinema ! Venez voir "" pour 1M€ seulement
-      </li>
-      <li>
-        <strong>Vendredi :</strong> Venez nombreux pour la soirée rési + résultats des plus gros lots de la tombola !
-      </li>
-    </ul>
-  </div>
-</div>
-</body>
+  </body>
 </html>
