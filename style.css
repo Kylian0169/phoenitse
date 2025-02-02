@@ -48,7 +48,6 @@ html {
   gap: 10px;
   width : 40vw;
   /* Espacement entre les boutons */
-  margin-right: 100px;
 }
 
 .tabs a {
@@ -80,6 +79,10 @@ html {
     height: 120px; /* Réduction du logo sur grands écrans */
   }
   
+  .tabs{
+    margin-right: 100px;
+  }
+
   .tabs button {
     padding: 15px; /* Boutons légèrement plus grands */
     font-size: 20px; /* Texte plus grand */
