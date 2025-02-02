@@ -43,29 +43,51 @@
           <label for="message">Message ou instructions supplémentaires :</label>
           <textarea id="message" name="message" rows="5"></textarea>
 
+          <p id="captcha-question"></p>
+          <input type="number" id="captcha-answer" required />
+
           <button type="submit">Envoyer la commande</button>
         </form>
       </div>
     </div>
 
     <script>
-        const orderButton = document.getElementById('order');
-        const orderModal = document.getElementById('orderModal');
-  
-        function closeModal() {
-          orderModal.style.display = 'none';
+      const orderButton = document.getElementById('order');
+      const orderModal = document.getElementById('orderModal');
+      const orderForm = document.getElementById('orderForm');
+      const captchaQuestion = document.getElementById('captcha-question');
+      const captchaAnswer = document.getElementById('captcha-answer');
+
+      function closeModal() {
+        orderModal.style.display = 'none';
+      }
+
+      orderButton.addEventListener('click', () => {
+        orderModal.style.display = 'block';
+        generateCaptcha();
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target === orderModal) {
+          closeModal();
         }
-  
-        orderButton.addEventListener('click', () => {
-          orderModal.style.display = 'flex';
-        });
-  
-        window.addEventListener('click', (event) => {
-          if (event.target === orderModal) {
-            closeModal();
-          }
-        });
-      </script>
+      });
+
+      function generateCaptcha() {
+        let num1 = Math.floor(Math.random() * 10) + 1;
+        let num2 = Math.floor(Math.random() * 10) + 1;
+        captchaQuestion.textContent = `Combien font ${num1} + ${num2} ?`;
+        captchaAnswer.dataset.correct = num1 + num2;
+      }
+
+      orderForm.addEventListener('submit', function(event) {
+        if (parseInt(captchaAnswer.value, 10) !== parseInt(captchaAnswer.dataset.correct, 10)) {
+          alert('CAPTCHA incorrect. Essayez encore.');
+          event.preventDefault();
+          generateCaptcha();
+        }
+      });
+    </script>
 
 <div class="tab" id="menu">
     <h2>Menu de la Semaine</h2>
