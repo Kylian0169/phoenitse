@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phoeni'TSE</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <style>
       .modal {
         display: none;
@@ -51,7 +51,7 @@
       <div class="modal-content">
         <button class="close-btn" onclick="closeModal()">&times;</button>
         <h2>Passer une commande</h2>
-        <form id="orderForm" action="send_to_discord.php" method="POST">
+        <form id="orderForm">
           <label for="name">Nom complet :</label>
           <input type="text" id="name" name="name" required />
 

@@ -49,3 +49,36 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
 });
+
+document.getElementById("orderForm").addEventListener("submit", async function(event) {
+  event.preventDefault(); // Empêcher le rechargement de la page
+
+  const formData = new FormData(this);
+  const name = formData.get("name");
+  const adress = formData.get("adress");
+  const numero = formData.get("numero");
+  const product = formData.get("product");
+  const message = formData.get("message");
+
+  const webhookURL = "https://discord.com/api/webhooks/1335653132247760946/0klK6pV2DH6T2WM7LsZF_Xvdt9piZSrK_YuNNvfV_mC4lsg9aFJ_FPKydFEmeJme3ivl"; //  Webhook
+
+  const payload = {
+      content: `📩 **Nouvelle commande reçue !**\n\n👤 **Nom :** ${name}\n🏠 **Adresse :** ${adress}\n📞 **Numéro :** ${numero}\n🛒 **Produit :** ${product}\n📝 **Message :** ${message}`
+  };
+
+  try {
+      await fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+      });
+
+      alert("Commande envoyée avec succès sur Discord !");
+      this.reset();
+  } catch (error) {
+      alert("Erreur lors de l'envoi de la commande.");
+      console.error("Erreur :", error);
+  }
+});
+
+
