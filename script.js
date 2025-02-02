@@ -75,6 +75,9 @@ document.getElementById("orderForm").addEventListener("submit", async function(e
 
       alert("Commande envoyée avec succès sur Discord !");
       this.reset();
+
+      window.location.href = "index.html"; // Redirection vers la page d'accueil
+
   } catch (error) {
       alert("Erreur lors de l'envoi de la commande.");
       console.error("Erreur :", error);
