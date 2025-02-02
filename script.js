@@ -15,30 +15,6 @@ function slide(direction) {
   slider.style.transform = `translateX(${offset}%)`;
 }
 
-function showTab(index) {
-  const tabs = document.querySelectorAll(".tab");
-  tabs.forEach((tab, i) => {
-    tab.classList.toggle("active", i === index);
-  });
-}
-
-function showTab(tabId) {
-  // Cacher tous les onglets
-  const tabs = document.querySelectorAll(".tab");
-  tabs.forEach((tab) => {
-    tab.classList.remove("active");
-  });
-
-  // Afficher l'onglet sélectionné
-  const activeTab = document.getElementById(tabId);
-  activeTab.classList.add("active");
-}
-
-// Afficher l'onglet "actu" par défaut
-document.addEventListener("DOMContentLoaded", () => {
-  showTab("actu");
-});
-
 function openPopup(content) {
   const popup = document.getElementById("popup");
   const popupBody = document.getElementById("popup-body");
@@ -58,7 +34,7 @@ function closePopup() {
 // Écouteurs pour les boutons "Nos cocktails" et "Nos gourmandises"
 document.addEventListener("DOMContentLoaded", () => {
   document
-    .querySelector(".space-button:nth-child(3)")
+    .querySelector(".space-button:nth-child(2)")
     .addEventListener("click", () => {
       openPopup(
         "<h2>Nos Cocktails</h2><p>Découvrez nos cocktails rafraîchissants et faits maison !</p>",
@@ -66,19 +42,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   document
-    .querySelector(".space-button:nth-child(4)")
+    .querySelector(".space-button:nth-child(3)")
     .addEventListener("click", () => {
       openPopup(
         "<h2>Nos Gourmandises</h2><p>Craquez pour nos desserts savoureux et faits avec amour !</p>",
       );
     });
-
-  document
-    .querySelector(".space-button:nth-child(2)")
-    .addEventListener("click", () => {
-      openPopup("<h2>Uber EATSE</h2><p>Commandez à graille :D</p>");
-    });
-  document.querySelector('#order').addEventListener('click', function (e) {
-      openPopup("<h2>Uber EATSE</h2><p>Commandez à graille :D</p>"); // meme chose mais pour le bouton order
-    })
 });
+
+document.getElementById("orderForm").addEventListener("submit", async function(event) {
+  event.preventDefault(); // Empêcher le rechargement de la page
+
+  const formData = new FormData(this);
+  const name = formData.get("name");
+  const adress = formData.get("adress");
+  const numero = formData.get("numero");
+  const product = formData.get("product");
+  const message = formData.get("message");
+
+  const webhookURL = "https://discord.com/api/webhooks/1335653132247760946/0klK6pV2DH6T2WM7LsZF_Xvdt9piZSrK_YuNNvfV_mC4lsg9aFJ_FPKydFEmeJme3ivl"; //  Webhook
+
+  const payload = {
+      content: `📩 **Nouvelle commande reçue !**\n\n👤 **Nom :** ${name}\n🏠 **Adresse :** ${adress}\n📞 **Numéro :** ${numero}\n🛒 **Produit :** ${product}\n📝 **Message :** ${message}`
+  };
+
+  try {
+      await fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+      });
+
+      alert("Commande envoyée avec succès sur Discord !");
+      this.reset();
+
+      window.location.href = "index.html"; // Redirection vers la page d'accueil
+
+  } catch (error) {
+      alert("Erreur lors de l'envoi de la commande.");
+      console.error("Erreur :", error);
+  }
+});
+
+
