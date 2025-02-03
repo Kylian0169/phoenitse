@@ -8,6 +8,7 @@ html {
   font-family: Arial, sans-serif;
   background: url('./images/bg/bg_site.jpg') no-repeat center center fixed;
   background-size: cover;
+  
   /* L'image couvre tout l'écran */
 }
 
@@ -18,7 +19,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+
   background: rgb(31, 42, 68);
   /* Fond sombre avec opacité */
   position: fixed;
@@ -38,7 +39,7 @@ html {
 .site-title {
   font-size: 40px;
   color: white;
-  width:60vw;
+  width: 60vw;
   user-select: none;
 }
 
@@ -46,23 +47,33 @@ html {
 .tabs {
   display: flex;
   gap: 10px;
-  width : 40vw;
+  
   /* Espacement entre les boutons */
 }
 
 .tabs a {
-  padding: 20px;
+  padding:8px 20px;
   background: rgb(216, 96, 66);
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 50px;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
+  text-wrap: wrap;
+  width: 100px;
+  height: 25px;
+  align-self: center;
+
+  vertical-align: middle;
+
+
 }
 
 .tabs a:hover {
   background: rgb(244, 162, 97);
   /* Effet au survol */
+  
 }
 
 /* ----------------------------- */
@@ -84,9 +95,10 @@ html {
   }
 
   .tabs button {
-    padding: 15px; /* Boutons légèrement plus grands */
+    padding: 20px 40px; /* Boutons légèrement plus grands */
     font-size: 20px; /* Texte plus grand */
   }
+
 }
 
 /* Écran moyen (tablette) */
@@ -102,15 +114,26 @@ html {
   .tabs {
     gap: 5px; /* Espacement réduit */
     margin-right: 100px;
+    flex-wrap:nowrap;
+    justify-content: center;
   }
 
   .tabs button {
-    padding: 10px 12px;
-    font-size: 14px;
+    padding: 40px;
+    font-size: 40px; /* Texte plus petit */
+
+  }
+
+  .tabs a {
+
+    padding : 10px 5px; /*Ajustement taille des boutons pour tablette */
+    flex-wrap: wrap;
+    
   }
   
   .site-title {
-    font-size: 20px; /* Taille du titre réduite */
+    font-size: 30px; /* Taille du titre réduite */
+
   }
 }
 
@@ -122,9 +145,7 @@ html {
     padding: 10px;
   }
 
-  body{
-    margin-top: 300px;
-  }
+
 
   .logo {
     height: 80px; /* Taille réduite sur mobile */
@@ -133,16 +154,24 @@ html {
   .tabs {
     flex-wrap: wrap;
     justify-content: center;
+    gap : 4px;
   }
 
   .tabs button {
-    padding: 8px 8px;
-    font-size: 14px; /* Texte plus petit */
+    padding: 40px;
+    font-size: 40px; /* Texte plus petit */
+    
   }
 
   .site-title {
     font-size: 18px; /* Ajustement pour mobile */
     text-align: center;
+  }
+
+  .tabs a {
+
+    padding : 10px 5px; /*Ajustement taille des boutons pour mobile */
+  
   }
 }
 
@@ -184,13 +213,34 @@ html {
   gap: 10px;
 }
 
-.banner {
+
+.banner{
   flex: 0 0 calc(33.33% - 10px);
   /* Affiche 3 bannières par vue */
+  
   height: 600px;
-  background: rgba(0, 0, 255, 0.2);
   border-radius: 8px;
-  color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+
+}
+.banner-lundi {
+
+  /* Affiche 3 bannières par vue */
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 281px;
+  
+  background-image: url('./images/teaser/lundi2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,12 +249,117 @@ html {
   z-index: 0;
 }
 
-.banner:hover {
+.banner-lundi:hover {
   transform: scale(1.05);
   /* Agrandissement au survol */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
+
+.banner-mardi {
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 281px;
+  
+  background-image: url('./images/teaser/mardi.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+}
+
+.banner-mardi:hover {
+  transform: scale(1.05);
+  /* Agrandissement au survol */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.banner-mercredi {
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 281px;
+  
+  background-image: url('./images/teaser/mercredi.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+}
+
+.banner-mercredi:hover {
+  transform: scale(1.05);
+  /* Agrandissement au survol */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.banner-jeudi {
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 281px;
+  
+  background-image: url('./images/teaser/jeudi.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+}
+
+.banner-jeudi:hover {
+  transform: scale(1.05);
+  /* Agrandissement au survol */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.banner-vendredi {
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 281px;
+  
+  background-image: url('./images/teaser/vendredi.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+}
+
+.banner-vendredi:hover {
+  transform: scale(1.05);
+  /* Agrandissement au survol */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
 
 /* Boutons de contrôle pour les bannières */
 .slider-button {
@@ -354,6 +509,8 @@ html {
   height: 100%;
   object-fit: contain;
 }
+
+
 
 /* ----------------------------- */
 /* 8. Section Programme de la Semaine */
