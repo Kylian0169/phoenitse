@@ -1,9 +1,17 @@
 let currentSlide = 0;
 
-function slide(direction) {
+function slide(direction,wScreen) {
   const slider = document.querySelector(".slider");
   const totalBanners = slider.children.length;
-  const bannersPerView = 1;
+  let bannersPerView = 3;
+  let offsetpixel = 40;
+  if(wScreen < 800) {
+    offsetpixel = 70;
+    bannersPerView = 1;
+    
+  }
+
+
 
   // Calculate the max slide index
   const maxSlideIndex = totalBanners - bannersPerView;
@@ -11,7 +19,7 @@ function slide(direction) {
   // Update the slide position
   currentSlide = Math.min(Math.max(currentSlide + direction, 0), maxSlideIndex);
 
-  const offset = (currentSlide * -70) / bannersPerView; // Adjust for 3 banners
+  const offset = (currentSlide  *- offsetpixel) / bannersPerView; // Adjust for n banners
   slider.style.transform = `translateX(${offset}%)`;
 }
 
@@ -59,12 +67,13 @@ document.getElementById("orderForm").addEventListener("submit", async function(e
   const numero = formData.get("numero");
   const product = formData.get("product");
   const message = formData.get("message");
-
+  this.reset();
   const webhookURL = "https://discord.com/api/webhooks/1335653132247760946/0klK6pV2DH6T2WM7LsZF_Xvdt9piZSrK_YuNNvfV_mC4lsg9aFJ_FPKydFEmeJme3ivl"; //  Webhook
 
   const payload = {
       content: `📩 **Nouvelle commande reçue !**\n\n👤 **Nom :** ${name}\n🏠 **Adresse :** ${adress}\n📞 **Numéro :** ${numero}\n🛒 **Produit :** ${product}\n📝 **Message :** ${message}`
   };
+
 
   try {
       await fetch(webhookURL, {
@@ -74,7 +83,7 @@ document.getElementById("orderForm").addEventListener("submit", async function(e
       });
 
       alert("Commande envoyée avec succès sur Discord !");
-      this.reset();
+
 
       window.location.href = "index.html"; // Redirection vers la page d'accueil
 

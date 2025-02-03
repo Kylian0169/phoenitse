@@ -114,7 +114,7 @@ html {
   .tabs {
     gap: 5px; /* Espacement réduit */
     margin-right: 100px;
-    flex-wrap:nowrap;
+    flex-wrap:wrap;
     justify-content: center;
   }
 
@@ -171,7 +171,7 @@ html {
   .tabs a {
 
     padding : 10px 5px; /*Ajustement taille des boutons pour mobile */
-  
+    flex-wrap : wrap
   }
 }
 
@@ -199,12 +199,18 @@ html {
   margin: 20px 0;
   position: relative;
   overflow: visible;
+
+
 }
 
 .slider-container {
   width: 100%;
   overflow: visible;
+  overflow: auto;
 }
+
+
+
 
 .slider {
   display: flex;
@@ -215,7 +221,7 @@ html {
 
 
 .banner{
-  flex: 0 0 calc(33.33% - 10px);
+
   /* Affiche 3 bannières par vue */
   
   height: 600px;
@@ -226,6 +232,7 @@ html {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 0;
+
 
 }
 .banner-lundi {
