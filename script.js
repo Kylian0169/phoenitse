@@ -6,7 +6,7 @@ function slide(direction,wScreen) {
   let bannersPerView = 3;
   let offsetpixel = 40;
   if(wScreen < 800) {
-    offsetpixel = 70;
+    offsetpixel = 100;
     bannersPerView = 1;
     
   }
