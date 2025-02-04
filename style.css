@@ -536,7 +536,7 @@ html {
 .weekly-program h2 {
   text-align: center;
   font-size: 24px;
-  color: #333;
+  color: #f5da99;
 }
 
 .weekly-program ul {
@@ -569,7 +569,9 @@ html {
   display: block;
   padding: 20px;
   padding-top: 120px;
-  background: rgba(250, 250, 250, 0.8);
+  background: #f5d9995f;
+  backdrop-filter: blur(10px);
+  background-blend-mode: overlay;
   border-radius: 8px;
 }
 
@@ -622,15 +624,18 @@ html {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow-y: auto;
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: white;
+  margin: 10% auto;
   padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  max-height: 80vh;
+  overflow-y: auto;
   border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content h2 {
