@@ -684,50 +684,63 @@ button:hover {
 /* ----------------------------- */
 /* 12. Gallerie equipe           */
 /* ----------------------------- */
+.imgeqip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(1.5em);
+  padding: 20px;
+  padding-top: 120px;
+  background: #f5d9995f;
+  backdrop-filter: blur(10px);
+  background-blend-mode: overlay;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
 div.gallery {
-  display: grid;
+  background: rgb(31, 42, 68);
   gap: 10px;
   padding: 10px;
-  box-sizing: border-box;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  border: 1px solid #ccc;
+  width:fit-content;
+  height: 600px;
+  border-radius: 20px;
+  border: 2px solid #f5da99;
+  transition: 0.5s;
+  margin-bottom: 60px;
+  margin-right: 2px;
 }
 
 div.gallery:hover {
-  border: 1px solid #777;
+  background: #f5da99;
 }
 
 div.gallery img {
-  width: 100%;
-  height: auto;
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 div.desc {
+  color: #333;
+  font-size: 18px;
+  background: #f5da99;
+  border-radius: 50px;
   padding: 15px;
   text-align: center;
 }
 
-.responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
-}
-
 @media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive {
+  div.gallery img{
     width: 100%;
   }
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+@media only screen and (max-width: 500px) {
+  .imgeqip {
+    margin-top: 150px;
+  }
+  div.gallery img{
+    width: 100%;
+  }
 }
