@@ -6,10 +6,11 @@ function slide(direction,wScreen) {
   let bannersPerView = 3;
   let offsetpixel = 40;
   if(wScreen < 800) {
-    offsetpixel = 80;
+    offsetpixel = 70;
     bannersPerView = 1;
     
   }
+  
 
 
 
@@ -65,14 +66,34 @@ document.getElementById("orderForm").addEventListener("submit", async function(e
   const name = formData.get("name");
   const adress = formData.get("adress");
   const numero = formData.get("numero");
-  const product = formData.get("product");
+  const nombrePlat1 = formData.get("nombrePlat1");
+  const nombrePlat2 = formData.get("nombrePlat2");
+  const nombreDessert1 = formData.get("nombreDessert1");
+  const nombreDessert2 = formData.get("nombreDessert2");
   const message = formData.get("message");
   this.reset();
+  const plat1 = "Plat1";
+  const plat2 = "Plat2";
+  const dessert1 = "Dessert1";
+  const dessert2 = "Dessert2";
   const webhookURL = "https://discord.com/api/webhooks/1335653132247760946/0klK6pV2DH6T2WM7LsZF_Xvdt9piZSrK_YuNNvfV_mC4lsg9aFJ_FPKydFEmeJme3ivl"; //  Webhook
 
   const payload = {
-      content: `📩 **Nouvelle commande reçue !**\n\n👤 **Nom :** ${name}\n🏠 **Adresse :** ${adress}\n📞 **Numéro :** ${numero}\n🛒 **Produit :** ${product}\n📝 **Message :** ${message}`
-  };
+      content: 
+      `📩 **Nouvelle commande reçue !**
+
+      👤 **Nom :** ${name}
+      📞 **Numéro :** ${numero}
+      📝 **Message :** ${message}
+
+      🏠 **Adresse :** ${adress}
+      🛒 **Produits :**
+        -${nombrePlat1} ${plat1}
+        -${nombrePlat2} ${plat2}
+        -${nombreDessert1} ${dessert1}
+        -${nombreDessert2} ${dessert2}
+        `
+};
 
 
   try {

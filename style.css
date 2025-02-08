@@ -8,6 +8,7 @@ html {
   font-family: Arial, sans-serif;
   background: url('./images/bg/bg_site.jpg') no-repeat center center fixed;
   background-size: cover;
+
   
   /* L'image couvre tout l'écran */
 }
@@ -179,8 +180,9 @@ html {
 /* 3. Effet Parallaxe */
 /* ----------------------------- */
 .parallax {
-  background-image: url('Rickrolling-Transparent-PNG.png');
-  min-height: 500px;
+  background-image: url('images/bg/foodwars.jpeg');
+  min-height: 300px;
+  max-height: 300px;
   /* Hauteur définie */
   background-attachment: fixed;
   /* Effet de défilement parallaxe */
@@ -617,7 +619,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(200, 52, 52, 0.5);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -654,6 +656,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  min-width: 200px;
 }
 
 input, textarea, button {
@@ -671,4 +674,25 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+.plat1{
+  background : url("images/logo/logo_phoenitse.png");
+  padding: 30px 30px; /* Boutons légèrement plus grands */
+  font-size: 20px; /* Texte plus grand */
+  background-size : cover;
+  flex-wrap: wrap;
+}
+
+.plat2{
+  background : url("images/logo/logo_phoenitse.png");
+  padding: 30px 30px; /* Boutons légèrement plus grands */
+  font-size: 20px; /* Texte plus grand */
+  background-size : cover;
+  flex-wrap: wrap;
+
+}
+
+.buttonsPlats{
+  flex-wrap: wrap;
 }
