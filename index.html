@@ -39,125 +39,18 @@
         <a href="">Accueil</a>
         <a href="menu.html">Le menu</a>
         <a href="equip.html">L'équipe</a>
-        <a href="reseaux.html">Nos réseaux</a>
+        <a href="https://www.instagram.com/phoenitse/">Suivez-nous</a>
       </nav>
     </header>
 
     <!-- Fixed Button commander -->
-    <button id="order">Commander</button>
+    <a href="commander.html"><button id="order">Commander</button></a>
 
     <!-- Modal Form -->
     <div id="orderModal" class="modal">
       <div class="modal-content">
         <button class="close-btn" onclick="closeModal()">&times;</button>
         <h2>Passer une commande</h2>
-        <form id="orderForm">
-          <label for="name">Nom complet :</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="Adresse">Adresse:</label>
-          <input type="text" id="adress" name="adress" required />
-
-          <label for="Numero">Numéro de Téléphone:</label>
-          <input type="text" id="numero" name="numero" required />
-
-          <div class="buttonsPlats">
-            <h2>Voici nos plats</h2>
-            <label for="nombre">Sélectionner une quantité : </label>
-          </br>
-          </br>
-            <prix> 5€ </prix>
-            <select name="nombrePlat1" id="nombrePlat1">
-              <optgroup label="Choisir un nombre">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </optgroup>
-
-            </select>
-            <buttonPlat1 class="plat1">PLAT 1</buttonPlat1>
-          </br>
-          <prix> 5€ </prix>
-          <select name="nombrePlat2" id="nombrePlat2">
-            <optgroup label="Choisir un nombre">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </optgroup>
-            </select>
-            <buttonPlat2 class="plat2">PLAT 2</buttonPlat2>
-          </div>
-          <div class="buttonsDesserts">
-            <h2>Un petit dessert ?</h2>
-            <label for="nombre">Sélectionner une quantité : </label>
-          </br>
-          </br>
-          <prix> 1€ </prix>
-            <select name="nombreDessert1" id="nombreDessert1">
-              <optgroup label="Choisir un nombre">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </optgroup>
-
-            </select>
-            <buttonDessert1 class="dessert1">DESSERT 1</buttonDessert1>
-          </br>
-          <prix> 2€ </prix>
-          <select name="nombreDessert2" id="nombreDessert2">
-            <optgroup label="Choisir un nombre">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </optgroup>
-            </select>
-            <buttonDessert2 class="dessert2">DESSERT 2</buttonDessert2>
-          </div>
-
-
-          <label for="product">Produit ou service :</label>
-          <input type="text" id="product" name="product" required />
-
-          <label for="message">Message ou instructions supplémentaires :</label>
-          <textarea id="message" name="message" rows="5"></textarea>
-
-          <p id="captcha-question"></p>
-          <input type="number" id="captcha-answer" required />
-
-          <button type="submit">Envoyer la commande</button>
-        </form>
       </div>
     </div>
 
@@ -192,86 +85,8 @@
             </div>
             <button class="slider-button right" onclick="slide(1,window.innerWidth)">&#8250;</button>
           </div>
-          <div class="space-buttons">
-            <a class="space-abutton" href="menu.html"><button class="space-button">Nos menus</button></a>
-            <button class="space-button">Nos cocktails</button>
-            <button class="space-button">Nos gourmandises</button>
-          </div>
         </div>
       </div>
-
-    <script>
-      const orderButton = document.getElementById('order');
-      const orderModal = document.getElementById('orderModal');
-      const orderForm = document.getElementById('orderForm');
-      const captchaQuestion = document.getElementById('captcha-question');
-      const captchaAnswer = document.getElementById('captcha-answer');
-
-      function closeModal() {
-        orderModal.style.display = 'none';
-      }
-
-      orderButton.addEventListener('click', () => {
-        orderModal.style.display = 'block';
-        generateCaptcha();
-      });
-
-      window.addEventListener('click', (event) => {
-        if (event.target === orderModal) {
-          closeModal();
-        }
-      });
-
-      function generateCaptcha() {
-        let num1 = Math.floor(Math.random() * 10) + 1;
-        let num2 = Math.floor(Math.random() * 10) + 1;
-        captchaQuestion.textContent = `Combien font ${num1} + ${num2} ?`;
-        captchaAnswer.dataset.correct = num1 + num2;
-      }
-
-      orderForm.addEventListener('submit', function(event) {
-        if (parseInt(captchaAnswer.value, 10) !== parseInt(captchaAnswer.dataset.correct, 10)) {
-          alert('CAPTCHA incorrect. Essayez encore.');
-          event.preventDefault();
-          generateCaptcha();
-        }
-      });
-    </script>
-
-      <!-- Popup Container -->
-      <div id="popup" class="popup-overlay">
-        <div class="popup-content">
-          <span class="popup-close" onclick="closePopup()">&times;</span>
-          <div id="popup-body">
-            <!-- Contenu dynamique -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Large Banners with Descriptions -->
-      <div class="large-banners">
-        <div class="banner-item">
-          <div class="banner-title">Pole cuisine</div>
-          <img
-            src="images/5-Ways-Healthy-Cooking-Classes-Can-Help-With-Your-Diet.jpg"
-            alt="Pole 1"
-            class="banner-image"
-          />
-        </div>
-        <div class="banner-item">
-          <div class="banner-title">Pole lecture pour enfants</div>
-          <img src="images/4052.jpg" alt="Pole 2" class="banner-image" />
-        </div>
-        <div class="banner-item">
-          <div class="banner-title">Pole soirées</div>
-          <img
-            src="images/shutterstock_1527035324.jpg"
-            alt="Pole 3"
-            class="banner-image"
-          />
-        </div>
-      </div>
-    </div>
 
     <div class="weekly-program">
       <h2>Programme de la Semaine</h2>
