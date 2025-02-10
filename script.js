@@ -11,9 +11,6 @@ function slide(direction,wScreen) {
     
   }
   
-
-
-
   // Calculate the max slide index
   const maxSlideIndex = totalBanners - bannersPerView;
 
