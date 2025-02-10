@@ -496,8 +496,8 @@ html {
 
 .banner-item {
   position: relative;
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  height: 300px;
   overflow: hidden;
   border-radius: 8px;
 }
@@ -511,7 +511,7 @@ html {
   padding: 8px 20px;
   border-radius: 12px;
   color: #333;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
   white-space: nowrap; /* Empêche le texte de revenir à la ligne */
 }
@@ -520,6 +520,7 @@ html {
   width: 100%;
   height: 100%;
   object-fit: contain;
+
 }
 
 .banner-price{
@@ -531,7 +532,7 @@ html {
   padding: 8px 20px;
   border-radius: 12px;
   color: #333;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   white-space: nowrap; /* Empêche le texte de revenir à la ligne */
 }
