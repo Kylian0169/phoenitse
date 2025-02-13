@@ -31,6 +31,7 @@ html {
   max-height: 150px;
   z-index: 1000;
   /* Toujours au-dessus des autres éléments */
+  align-items: left;
 }
 
 
@@ -44,8 +45,9 @@ html {
   font-size: 50px;
   font-family: 'ITC Benguiat';
   color: #f5da99;
-  width: 60vw;
   user-select: none;
+
+  flex-direction: row;
 }
 
 /* Navigation (les boutons de l'en-tête) */
@@ -72,7 +74,7 @@ html {
   height: 25px;
   align-self: center;
   user-select: none;
-  vertical-align: middle;
+  vertical-align: center;
   transition: 0.5s;
 }
 
@@ -97,7 +99,7 @@ html {
   .header-top{
     display: flex;
     align-items: center; /* Alignement vertical */
-    gap: 10px; /* Espacement entre le logo et le titre */
+    gap: 0px; /* Espacement entre le logo et le titre */
   
     }
 
@@ -127,7 +129,7 @@ html {
   .header-top{
     display: flex;
     align-items: center; /* Alignement vertical */
-    gap: 10px; /* Espacement entre le logo et le titre */
+    gap: 0px; /* Espacement entre le logo et le titre */
   
     }
 
@@ -157,6 +159,8 @@ html {
   
   .site-title {
     font-size: 40px; /* Taille du titre réduite */
+    text-align: center;
+    flex-direction: row;
 
   }
 }
@@ -173,7 +177,7 @@ html {
 .header-top{
   display: flex;
   align-items: center; /* Alignement vertical */
-  gap: 10px; /* Espacement entre le logo et le titre */
+  gap: 0px; /* Espacement entre le logo et le titre */
 
   }
 
