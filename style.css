@@ -88,9 +88,19 @@ html {
 /* Écran large (ordinateur) */
 @media (min-width: 1024px) {
   .header {
-    padding: 0px 40px; /* Espacement plus grand sur grand écran */
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre horizontalement */
+    padding: 30px 40px; /* Espacement plus grand sur grand écran */
   }
   
+  .header-top{
+    display: flex;
+    align-items: center; /* Alignement vertical */
+    gap: 10px; /* Espacement entre le logo et le titre */
+  
+    }
+
   .logo {
     height: 120px; /* Réduction du logo sur grands écrans */
   }
@@ -109,8 +119,17 @@ html {
 /* Écran moyen (tablette) */
 @media (max-width: 1023px) and (min-width: 768px) {
   .header {
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre horizontalement */
     padding: 15px 20px;
   }
+  .header-top{
+    display: flex;
+    align-items: center; /* Alignement vertical */
+    gap: 10px; /* Espacement entre le logo et le titre */
+  
+    }
 
   .logo {
     height: 100px; /* Taille du logo pour tablettes */
@@ -119,7 +138,6 @@ html {
   .tabs {
     gap: 5px; /* Espacement réduit */
     margin-right: 100px;
-    flex-wrap:wrap;
     justify-content: center;
   }
 
@@ -146,9 +164,19 @@ html {
 /* Écran petit (téléphone) */
 @media (max-width: 767px) {
   .header {
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre horizontalement */
     padding: 10px;
-    flex-direction: row;
   }
+
+.header-top{
+  display: flex;
+  align-items: center; /* Alignement vertical */
+  gap: 10px; /* Espacement entre le logo et le titre */
+
+  }
+
 
   .logo {
     height: 80px; /* Taille réduite sur mobile */
