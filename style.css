@@ -84,6 +84,21 @@ html {
 }
 
 /* ----------------------------- */
+/* 3. Effet Parallaxe */
+/* ----------------------------- */
+.parallax {
+  background-image: url('images/bg/liste3.jpg');
+  min-height: 300px;
+  max-height: 300px;
+  /* Hauteur définie */
+  background-attachment: fixed;
+  /* Effet de défilement parallaxe */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ----------------------------- */
 /* Contrôle de la taille de l'écran */
 /* ----------------------------- */
 
@@ -94,6 +109,7 @@ html {
     flex-direction: row; /* Empile les éléments verticalement */
     align-items: center; /* Centre horizontalement */
     padding: 30px 40px; /* Espacement plus grand sur grand écran */
+    max-height: 75px;
   }
   
   .header-top{
@@ -115,8 +131,15 @@ html {
     padding: 20px 40px; /* Boutons légèrement plus grands */
     font-size: 20px; /* Texte plus grand */
   }
-
+  .parallax{
+    min-height: 500px;
+    max-height: 500px;
+    background-size: contain;
+  }
+  
 }
+
+
 
 /* Écran moyen (tablette) */
 @media (max-width: 1023px) and (min-width: 768px) {
@@ -208,22 +231,18 @@ html {
     padding : 0px 0px; /*Ajustement taille des boutons pour mobile */
     flex-wrap : wrap
   }
+  .parallax{
+    background-size: contain;
+    min-height: 300px;
+    max-height: 300px;
+    /* Hauteur définie */
+    background-attachment: fixed;
+    /* Effet de défilement parallaxe */
+    background-position: center;
+  }
 }
 
-/* ----------------------------- */
-/* 3. Effet Parallaxe */
-/* ----------------------------- */
-.parallax {
-  background-image: url('images/bg/foodwars.jpeg');
-  min-height: 300px;
-  max-height: 300px;
-  /* Hauteur définie */
-  background-attachment: fixed;
-  /* Effet de défilement parallaxe */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 
 /* ----------------------------- */
 /* 4. Section des Bannières Défilantes */
@@ -278,7 +297,7 @@ html {
   max-height: 500px;
   min-width: 281px;
   
-  background-image: url('./images/teaser/lundi2.png');
+  background-image: url('./images/teaser/lundi.png');
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -397,6 +416,32 @@ html {
 }
 
 .banner-vendredi:hover {
+  transform: scale(1.05);
+  /* Agrandissement au survol */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.banner-samedi {
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 281px;
+  
+  background-image: url('./images/teaser/samedi.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+}
+
+.banner-samedi:hover {
   transform: scale(1.05);
   /* Agrandissement au survol */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
