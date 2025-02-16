@@ -578,6 +578,7 @@ html {
   height: 300px;
   overflow: hidden;
   border-radius: 8px;
+  flex-wrap: wrap;
 }
 
 .banner-title {
@@ -589,15 +590,17 @@ html {
   padding: 8px 20px;
   border-radius: 12px;
   color: #333;
-  font-size: 20px;
+  font-size: 13px;
   font-weight: bold;
   white-space: nowrap; /* Empêche le texte de revenir à la ligne */
+  
 }
 
 .banner-image {
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: contain;
+  margin-top: 30px;
 
 }
 
@@ -872,7 +875,16 @@ div.desc {
 .gform-container{
   display : flex;
   align-items: center;
-  margin-top : 100px;
+  margin-top : 124px;
+  min-width : 1em;
+  background: #f5da99;
+  background-size: cover;
+  backdrop-filter: blur(5px);
+}
+.gform-problem{
+  display : flex;
+  align-items: center;
+  margin-top : 0px;
   min-width : 1em;
   background: #f5da99;
   background-size: cover;
