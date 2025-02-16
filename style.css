@@ -669,7 +669,7 @@ html {
 }
 
 .tab {
-  display: block;
+  display: flex;
   padding: 20px;
   padding-top: 120px;
   background: #f5d9995f;
