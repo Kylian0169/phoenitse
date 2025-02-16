@@ -88,8 +88,7 @@ html {
 /* ----------------------------- */
 .parallax {
   background-image: url('./images/bg/liste3.jpg');
-  min-height: 300px;
-  max-height: 300px;
+
   /* Hauteur définie */
   background-attachment: fixed;
   /* Effet de défilement parallaxe */
@@ -142,7 +141,7 @@ html {
 
 
 /* Écran moyen (tablette) */
-@media (max-width: 1023px) and (min-width: 768px) {
+@media (max-width: 1023px) and (min-width: 850px) {
   .header {
     display: flex;
     flex-direction: row; /* Empile les éléments verticalement */
@@ -189,7 +188,7 @@ html {
 }
 
 /* Écran petit (téléphone) */
-@media (max-width: 767px) {
+@media (max-width: 850px) {
   .header {
     display: flex;
     flex-direction: column; /* Empile les éléments verticalement */
@@ -233,8 +232,8 @@ html {
   }
   .parallax{
     background-size: contain;
-    min-height: 300px;
-    max-height: 300px;
+    min-height: 400px;
+    max-height: 400px;
     /* Hauteur définie */
     background-attachment: fixed;
     /* Effet de défilement parallaxe */
@@ -485,7 +484,7 @@ html {
   margin: 40px 0;
   height: 200px;
   overflow: hidden;
-  @media (max-width: 767px) {
+  @media (max-width: 850px) {
       flex-wrap: wrap;
       justify-content: center;
   }
@@ -501,7 +500,7 @@ html {
   border: 2px solid #ddd;
   padding: 20px 40px;
   font-size: 16px;
-  @media (max-width: 767px) {
+  @media (max-width: 850px) {
     padding: 10px 20px;
 }
   border-radius: 50px;
@@ -723,7 +722,7 @@ html {
   right: 10px;
   bottom: 10px;
   font-size: 30px;
-  @media (max-width: 767px) {
+  @media (max-width: 850px) {
     font-size: 20px;
   }
   user-select: none;
@@ -854,7 +853,7 @@ div.desc {
   text-align: center;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 850px) {
   div.gallery img{
     width: 100%;
   }
