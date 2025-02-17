@@ -679,10 +679,9 @@ html {
 }
 
 .tab-menu {
-  display: block;
-  padding: 20px;
-  padding-top: 120px;
-  margin-top: 80px;;
+  display: flex;
+  padding-top: 30px;
+  margin-top: 150px;;
   background: #f5d9995f;
   backdrop-filter: blur(10px);
   background-blend-mode: overlay;
