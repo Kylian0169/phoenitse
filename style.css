@@ -500,7 +500,7 @@ html {
   border: 2px solid #ddd;
   padding: 20px 40px;
   font-size: 16px;
-  @media (max-width: 850px) {
+  @media (max-width: 880px) {
     padding: 10px 20px;
 }
   border-radius: 50px;
@@ -669,7 +669,17 @@ html {
 }
 
 .tab {
-  display: flex;
+  display: block;
+  padding: 20px;
+  padding-top: 120px;
+  background: #f5d9995f;
+  backdrop-filter: blur(10px);
+  background-blend-mode: overlay;
+  border-radius: 8px;
+}
+
+.tab-menu {
+  display: block;
   padding: 20px;
   padding-top: 120px;
   background: #f5d9995f;
