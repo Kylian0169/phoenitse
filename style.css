@@ -228,7 +228,8 @@ html {
 
   .tabs a {
     padding : 0px 0px; /*Ajustement taille des boutons pour mobile */
-    flex-wrap : wrap
+    flex-wrap : wrap;
+    width:120px;
   }
   .parallax{
     background-size: contain;
@@ -679,7 +680,7 @@ html {
 }
 
 .tab-menu {
-  display: flex;
+  display: block;
   padding-top: 30px;
   margin-top: 150px;;
   background: #f5d9995f;
@@ -734,6 +735,7 @@ html {
   font-size: 30px;
   @media (max-width: 850px) {
     font-size: 20px;
+    margin-right:30px;
   }
   user-select: none;
   padding: 15px;
